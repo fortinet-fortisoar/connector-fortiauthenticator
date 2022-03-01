@@ -46,104 +46,590 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Get Specific Radius User<br></td><td>Get Radius Use by filter paramaters<br></td><td>get_radius_user<br/>Configuration<br></td></tr>
 </tbody></table>
 
-### operation: Run Operation Command
+### operation: Get Schema
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody>
-<tr><td>Method<br></td><td>RPC Command to run<br></td>
-</tr><tr><td>Custom Method<br></td><td>if the command is not in the list above (Method) you can use a custom one as a Custom method. To get the exact command syntax refer to this example on JunOS: [show route|display xml rpc] <br>
-</td></tr><tr><td>Method Parameters<br></td><td>Method parameters in JSON. For example, if the action is get-interface-information the parameter(s) could be [{'interface-name':'ge-0/0/0'}]<br>
+<tr><td>Request Schema<br></td><td>Retrieves a report for all the endpoint actions within FortiAuthenticator<br></td>
 </td></tr></tbody></table>
 
 
 #### Output
 The output contains the following populated JSON schema: <JSON Output>
+```
+  {
+        "auth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "emergencytoken": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fabric": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fgtgroupfilter": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortiguardmessages": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortitokenmobilelicenses": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortitokenmobileprovisioning": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortitokens": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ftpservers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "iamaccounts": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "iamusers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ldapusers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "licensing": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "localapiadmin": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "localgroup-memberships": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "localusers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "logsettings": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "macdevices": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "macgroup-memberships": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "macgroups": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "oauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "offlinehotpupdate": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "offlineotp": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "passwordpolicies": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "pushauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "pushauthresp": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "pushpoll": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiusclients": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiuspolicies": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiuspolicyclient": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiususers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "realmauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "recovery": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "scepreqs": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "scheduledbackupsettings": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "smtpservers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ssoauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ssogroup": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "syslogservers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "system": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "systeminfo": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "tacplusclients": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "tacpluspolicies": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "tacpluspolicyclient": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "transfertoken": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "usercerts": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "userfortitokenpolicy": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "usergroups": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "userlockoutpolicy": {
+          "list_endpoint": "",
+          "schema": ""
+        }
+      }
+```
+### operation: Get Specific Local User
+#### Description
 
-### operation: Run Configuration Command
+- Get Local User by ID.
+
 #### Input parameters
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody>
-<tr><td>Request Payload<br></td><td>HTTP/POST XML Payload as documented here https://www.juniper.net/documentation/us/en/software/junos/rest-api/rest-api.pdf<br>
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Input for user search<br></td><td>Search can be made using - ID or Username or Email<br>
 </td></tr></tbody></table>
 
 #### Output
 The output contains the following populated JSON schema: <JSON Output>
-
-### operation: Get Address Set
-#### Input parameters
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Address Set<br></td><td>Name of the address set<br>
-</td></tr><tr><td>Get Entries Count<br></td><td>If checked, returns only entries count instead of the entries data<br>
-</td></tr></tbody></table>
-
-#### Output
-The output contains the following populated JSON schema: <JSON Output>
-
-
-### operation: Add an Object to Global Address Set
-#### Requirements
-
-- This action will add object(s) (IP/FQDN/Wildcard) to an address set of the **global address book** so the address set (defined by the name you use in the Address Set parameter) can be used with any security policy from and to any zone.
-- The action doesn't create the security policy, the users have to do it themselves and associate the Address-Set with any policy of their choosing.
-- A maximum of 1024 address (IPv4) can be created. each IPv6 takes up a space of 4 IPv4s.
-- You can use **Get Address Set** /count Action to check how many records are there already.
-
-#### Input parameters
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Address Set<br></td><td>Name of the address set<br>
-</td></tr><tr><td>Object Types<br></td><td>Type of the object(s) to add, only one type is supported at a time. Wildcard format is: A.B.C.D/E.F.G.H<br>
-</td></tr><tr><td>Object(s) To Add<br></td><td>IP address, an FQDN or a wildcard to add, for multiple entries use CSV format such as host1.domain.com,host2.domain.com if the type is dns-name<br>
-</td></tr></tbody></table>
-
-#### Output
-The output contains the following populated JSON schema: <JSON Output>
-
-
-### operation: Delete Object from Global Address Set
-#### Input parameters
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Address set<br></td><td>Name of the address set<br>
-</td></tr><tr><td>Object Types<br></td><td>Type of the object(s) to delete, only one type is supported at a time<br>
-</td></tr><tr><td>Object(s) To Delete<br></td><td>IP address, an FQDN or a wildcard to delete, for multiple entries use CSV format such as host1.domain.com,host2.domain.com if the type is dns-name<br>
-</td></tr></tbody></table>
-
-#### Output
-The output contains the following populated JSON schema: <JSON Output>
-
-
-### operation: Get Prefix List
-#### Input parameters
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Prefix List<br></td><td>Name of the Prefix List<br>
-</td></tr><tr><td>Get Entries Count<br></td><td>If checked, returns only entries count instead of the entries data<br>
-</td></tr></tbody></table>
-
-#### Output
-The output contains the following populated JSON schema: <JSON Output>
-85325
-- The action only creates and populates prefix list, you will need to associate it with a firewall filter. For example if the prefix list you create is called **Bad-IPs** (defined by the prefix list parameter) you will need to add the below configuration to use the prefix list to block traffic from/to its addresses on ge-0/0/0.0.
-
-```bash
-set firewall family inet filter Blocked-Group term 1 from prefix-list Bad-IPs
-set firewall family inet filter Blocked-Group term 1 then discard
-set firewall family inet filter Blocked-Group term 99 then accept
-set interfaces ge-0/0/0.0 family inet filter input Blocked-Group
-set interfaces ge-0/0/0.0 family inet filter ouput Blocked-Group
+```
+  {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      }
 ```
 
+
+### operation: Get Users
+This endpoint represents local user resource, namely a user account. This resource can be found in the FortiAuthenticator GUI under Authentication > Local Users..",
 #### Input parameters
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Prefix List<br></td><td>Name of the Prefix List<br>
-</td></tr><tr><td>Address(es) To Add<br></td><td>IPv4 or IPv6 Address or Addresses (in CSV) to add to the prefix list<br>
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Get Users<br></td><td>No parameters needed<br>
 </td></tr></tbody></table>
 
 #### Output
 The output contains the following populated JSON schema: <JSON Output>
+```
+  {
+            "active": "",
+            "address": "",
+            "change_password": "",
+            "city": "",
+            "country": "",
+            "custom1": "",
+            "custom2": "",
+            "custom3": "",
+            "email": "",
+            "expires_at": "",
+            "fido": "",
+            "first_name": "",
+            "ftk_only": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mail_host": "",
+            "mail_routing_address": "",
+            "mobile_number": "",
+            "phone_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "state": "",
+            "token_auth": "",
+            "token_fas": "",
+            "token_serial": "",
+            "token_type": "",
+            "user_groups": [],
+            "username": ""
+          }
+  ```
 
 
-### operation: Delete Address(es) from a Prefix List
+### operation: Create Local User
+This endpoint represents local user resource, namely a user account. This resource can be found in the FortiAuthenticator GUI under Authentication > Local Users."
+#### Input parameters
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Input<br></td><td>Username<br><tr><td>Input<br></td><td>Password<br><tr><td>Input<br></td><td>Email<br><tr><td>Input<br></td><td>First Name<br><tr><td>Input<br></td><td>Last Name<br><tr><td>Input<br></td><td>Account Status (Yes/No) checkbox.<br>
+</td></tr></tbody></table>
+
+#### Output
+The output contains the following populated JSON schema:
+
+```
+  {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_answer": "",
+        "recovery_by_question": "",
+        "recovery_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      }
+```
+
+### operation: Update Local User Status
+Update Local User Status
+#### Input parameters
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>CheckBox<br></td><td>Activate/Deactivates local user<br>
+</td></tr><tr><td>Input<br></td><td>Local User ID input for active/deactive status<br>
+</td></tr></tbody></table>
+
+#### Output
+The output contains the following populated JSON schema:
+```
+{
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      }
+  ```
+
+
+### operation: Get Specific Ladap User
+Get Local Use by filter paramaters
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Prefix List<br></td><td>Name of the Prefix List<br>
 </td></tr><tr><td>Address(es) To Delete<br></td><td>IPv4 or IPv6 Address or Addresses (in CSV) to delete from the prefix list<br>
 </td></tr></tbody></table>
 
 #### Output
-The output contains the following populated JSON schema: <JSON Output>
+```
+{
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      }
+  ```
+  
+### operation: Update LDAP User
+Activate/Deactivates LDAP user
+#### Input parameters
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Prefix List<br></td><td>Name of the Prefix List<br>
+</td></tr><tr><td>Address(es) To Delete<br></td><td>IPv4 or IPv6 Address or Addresses (in CSV) to delete from the prefix list<br>
+</td></tr></tbody></table>
+
+#### Output
+```
+{
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      }
+  ```
+  
+### operation: Get Specific Radius User
+Get Radius Use by filter paramaters - username or ID or email
+#### Input parameters
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>User ID<br></td><td>User ID for query<br>
+</td></tr><tr><td>Username<br></td><td>Username of the user<br></td></tr><tr><td>Email<br></td><td>Email address of the user to query<br>
+</td></tr></tbody></table>
+
+#### Output
+The output contains the following populated JSON schema:
+```
+{
+        "meta": {
+          "limit": "",
+          "next": "",
+          "offset": "",
+          "previous": "",
+          "total_count": ""
+        },
+        "objects": [
+          {
+            "active": "",
+            "dn": "",
+            "email": "",
+            "fido": "",
+            "first_name": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mobile_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "server_address": "",
+            "server_name": "",
+            "token_auth": "",
+            "token_serial": "",
+            "token_type": "",
+            "username": ""
+          }
+        ]
+      }
+  ```
+  
+### operation: Update Radius User
+Active/Deactive Radius user
+#### Input parameters
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Input<br></td><td>UserID to active/deactive user. Use the checkbox option.<br>
+</td></tr></tbody></table>
+
+#### Output
+The output contains the following populated JSON schema:
+```
+  {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      }
+  ```
+
+### operation: User Lockout Policy Info
+This endpoint is used to query and edit user account lockout policy settings including the maximum number of failed login attempts, specify the lockout period, and enable inactive user lockouts.
+
+#### Input parameters
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Paramters<br></td><td>No Parameters required<br>
+</td></tr></tbody></table>
+
+#### Output
+The output contains the following populated JSON schema: 
+```
+  {
+        "failed_login_lockout": "",
+        "failed_login_lockout_max_attempts": "",
+        "failed_login_lockout_period": "",
+        "failed_login_lockout_permanent": "",
+        "inactivity_lockout": "",
+        "inactivity_lockout_period": ""
+      }
+  ```
 
 
 ## Included playbooks
-The `Sample - juniper-junos - 1.0.0` playbook collection comes bundled with the Juniper JunOS connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR<sup>TM</sup> after importing the Juniper JunOS connector.
+The `Sample - FortiAuthenticator - 1.0.0` playbook collection comes bundled with the FortiAuthenticator connector. These playbooks contain steps using which you can perform all supported actions.
 
