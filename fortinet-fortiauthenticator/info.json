@@ -1,0 +1,892 @@
+{
+  "name": "fortinet-fortiauthenticator",
+  "label": "Fortinet FortiAuthenticator",
+  "version": "1.0.0",
+  "description": "FortiAuthenticator provides centralized authentication services for the Fortinet Security Fabric including single sign on services, certificate management, and guest management.",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Threat Intelligence",
+  "icon_small_name": "fortiauthenticator_small.png",
+  "icon_large_name": "fortiauthenticator_large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server",
+        "description": "URL of the Fortinet FortiAuthenticator server to which you will connect and perform automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Username",
+        "type": "text",
+        "name": "username",
+        "description": "Username used to access the Fortinet FortiAuthenticator server to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "API Key",
+        "type": "password",
+        "name": "api_key",
+        "description": "API key that is configured for your account for using the Fortinet FortiAuthenticator APIs.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_schema",
+      "title": "Get Schema",
+      "description": "Retrieves a report for all the endpoint actions within FortiAuthenticator",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_schema",
+      "output_schema": {
+        "auth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "emergencytoken": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fabric": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fgtgroupfilter": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortiguardmessages": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortitokenmobilelicenses": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortitokenmobileprovisioning": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortitokens": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ftpservers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "iamaccounts": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "iamusers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ldapusers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "licensing": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "localapiadmin": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "localgroup-memberships": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "localusers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "logsettings": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "macdevices": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "macgroup-memberships": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "macgroups": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "oauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "offlinehotpupdate": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "offlineotp": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "passwordpolicies": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "pushauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "pushauthresp": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "pushpoll": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiusclients": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiuspolicies": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiuspolicyclient": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiususers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "realmauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "recovery": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "scepreqs": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "scheduledbackupsettings": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "smtpservers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ssoauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ssogroup": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "syslogservers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "system": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "systeminfo": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "tacplusclients": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "tacpluspolicies": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "tacpluspolicyclient": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "transfertoken": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "usercerts": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "userfortitokenpolicy": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "usergroups": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "userlockoutpolicy": {
+          "list_endpoint": "",
+          "schema": ""
+        }
+      },
+      "parameters": [
+      ]
+    },
+    {
+      "operation": "get_users",
+      "title": "Get Local Users",
+      "description": "Retrieves a list of local users from Fortinet FortiAuthenticator.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_users",
+      "output_schema": {
+        "meta": {
+          "limit": "",
+          "next": "",
+          "offset": "",
+          "previous": "",
+          "total_count": ""
+        },
+        "objects": [
+          {
+            "active": "",
+            "address": "",
+            "change_password": "",
+            "city": "",
+            "country": "",
+            "custom1": "",
+            "custom2": "",
+            "custom3": "",
+            "email": "",
+            "expires_at": "",
+            "fido": "",
+            "first_name": "",
+            "ftk_only": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mail_host": "",
+            "mail_routing_address": "",
+            "mobile_number": "",
+            "phone_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "state": "",
+            "token_auth": "",
+            "token_fas": "",
+            "token_serial": "",
+            "token_type": "",
+            "user_groups": [],
+            "username": ""
+          }
+        ]
+      },
+      "parameters": [
+      ]
+    },
+    {
+      "operation": "get_local_user",
+      "title": "Get Specific Local User",
+      "description": "Retrieves details of a specific local user from Fortinet FortiAuthenticator based on the input parameters User ID, Username and Email you have specified.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_local_user",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "Search User By",
+          "description": "Select the action that you want to perform on the specified local user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "name": "output_mode",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "ID",
+            "Username",
+            "Email"
+          ],
+          "tooltip": "Select the action that you want to perform on the specified local user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "onchange": {
+            "ID": [
+              {
+                "title": "User ID",
+                "type": "text",
+                "name": "id",
+                "description": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "required": false,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Username": [
+              {
+                "title": "Username",
+                "type": "text",
+                "name": "username",
+                "description": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "required": false,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Email": [
+              {
+                "title": "Search by Email",
+                "type": "text",
+                "name": "email",
+                "description": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "required": false,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "operation": "create_local_user",
+      "title": "Create Local User",
+      "description": "Create a new local user in Fortinet FortiAuthenticator based on the Username, Password, Email, and other input parameters you have specified.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "create_local_user",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_answer": "",
+        "recovery_by_question": "",
+        "recovery_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "Username",
+          "type": "text",
+          "name": "username",
+          "description": "Name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 253, contains only letters, numbers and @/./+/-/_ characters",
+          "tooltip": "Name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 253, contains only letters, numbers and @/./+/-/_ characters",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Password",
+          "type": "password",
+          "name": "password",
+          "description": "Password for the user from which you want to create a local user in Fortinet FortiAuthenticator.Note: max length = 50",
+          "tooltip": "Password for the user from which you want to create a local user in Fortinet FortiAuthenticator.Note: max length = 50",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Email",
+          "type": "text",
+          "name": "email",
+          "description": "Email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
+          "tooltip": "Email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "First Name",
+          "type": "text",
+          "name": "first_name",
+          "description": "First name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "tooltip": "First name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Last Name",
+          "type": "text",
+          "name": "last_name",
+          "description": "Last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "tooltip": "Last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Account Status",
+          "type": "checkbox",
+          "name": "active",
+          "description": "Account Status of the user from which you want to create a local user in Fortinet FortiAuthenticator. Default set as True.",
+          "tooltip": "Account Status of the user from which you want to create a local user in Fortinet FortiAuthenticator. Default set as True",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": true
+        }
+      ]
+    },
+    {
+      "operation": "update_user_status",
+      "title": "Update Local User Status",
+      "description": "Update an specific local user status in Fortinet FortiAuthenticator based on the User ID and Active/Deactive you have specified.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "update_user_status",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "User ID",
+          "type": "text",
+          "name": "userid",
+          "description": "ID of the user from which you want to update a local user status in Fortinet FortiAuthenticator.",
+          "tooltip": "ID of the user from which you want to update a local user status in Fortinet FortiAuthenticator.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Active/Deactive",
+          "type": "checkbox",
+          "name": "active",
+          "description": "Used to activate/deactivate local user status in Fortinet FortiAuthenticator. Default set as True.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": true,
+          "tooltip": "Used to activate/deactivate local user status in Fortinet FortiAuthenticator. Default set as True"
+        }
+      ]
+    },
+    {
+      "operation": "get_ldap_user",
+      "title": "Get Specific LDAP User",
+      "description": "Retrieves details of a specific LDAP user from Fortinet FortiAuthenticator based on the input parameters User ID, Username and Email you have specified.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_ldap_user",
+      "output_schema": {
+        "meta": {
+          "limit": "",
+          "next": "",
+          "offset": "",
+          "previous": "",
+          "total_count": ""
+        },
+        "objects": [
+          {
+            "active": "",
+            "dn": "",
+            "email": "",
+            "fido": "",
+            "first_name": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mobile_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "server_address": "",
+            "server_name": "",
+            "token_auth": "",
+            "token_serial": "",
+            "token_type": "",
+            "username": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Search User By",
+          "name": "output_mode",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "ID",
+            "Username",
+            "Email"
+          ],
+          "description": "Select the action that you want to perform on the specified LDAP user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "tooltip": "Select the action that you want to perform on the specified LDAP user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "onchange": {
+            "ID": [
+              {
+                "title": "User ID",
+                "type": "text",
+                "name": "id",
+                "description": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": ""
+              }
+            ],
+            "Username": [
+              {
+                "title": "Username",
+                "type": "text",
+                "name": "username",
+                "description": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": ""
+              }
+            ],
+            "Email": [
+              {
+                "title": "Search by Email",
+                "type": "text",
+                "name": "email",
+                "description": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "operation": "update_ldapuser_status",
+      "title": "Update LDAP User Status",
+      "description": "Update an specific LDAP user status in Fortinet FortiAuthenticator based on the User ID and Active/Deactive you have specified.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "update_ldapuser_status",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "User ID",
+          "type": "text",
+          "name": "userid",
+          "description": "ID of the user from which you want to update a LDAP user status in Fortinet FortiAuthenticator.",
+          "tooltip": "ID of the user from which you want to update a LDAP user status in Fortinet FortiAuthenticator.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Active/Deactive",
+          "type": "checkbox",
+          "name": "active",
+          "description": "Used to activate/deactivate LDAP user status in Fortinet FortiAuthenticator. Default set as True.",
+          "tooltip": "Used to activate/deactivate LDAP user status in Fortinet FortiAuthenticator. Default set as True.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": true
+        }
+      ]
+    },
+    {
+      "operation": "get_radius_user",
+      "title": "Get Specific Radius User",
+      "description": "Retrieves details of a specific radius user from Fortinet FortiAuthenticator based on the input parameters User ID, Username and Email you have specified.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_radius_user",
+      "output_schema": {
+        "meta": {
+          "limit": "",
+          "next": "",
+          "offset": "",
+          "previous": "",
+          "total_count": ""
+        },
+        "objects": [
+          {
+            "active": "",
+            "dn": "",
+            "email": "",
+            "fido": "",
+            "first_name": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mobile_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "server_address": "",
+            "server_name": "",
+            "token_auth": "",
+            "token_serial": "",
+            "token_type": "",
+            "username": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "User ID",
+          "type": "text",
+          "name": "userid",
+          "description": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+          "tooltip": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Username",
+          "type": "text",
+          "name": "username",
+          "description": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+          "tooltip": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Search by Email",
+          "type": "text",
+          "name": "emailsearch",
+          "description": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+          "tooltip": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "operation": "update_radiususer_status",
+      "title": "Update Radius User Status",
+      "description": "Update an specific radius user status in Fortinet FortiAuthenticator based on the User ID and Active/Deactive you have specified.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "deactivate_radiususer",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "User ID",
+          "type": "text",
+          "name": "userid",
+          "description": "ID of the user from which you want to update a radius user status in Fortinet FortiAuthenticator.",
+          "tooltip": "ID of the user from which you want to update a radius user status in Fortinet FortiAuthenticator.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Active/Deactive",
+          "type": "checkbox",
+          "name": "active",
+          "description": "Used to activate/deactivate radius user status in Fortinet FortiAuthenticator. Default set as True.",
+          "tooltip": "Used to activate/deactivate radius user status in Fortinet FortiAuthenticator. Default set as True.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": true
+        }
+      ]
+    },
+    {
+      "operation": "get_userlockout_policy",
+      "title": "Get User Lockout Policy Info",
+      "description": "Retrieves an User Lockout Policy details from Fortinet FortiAuthenticator.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_userlockout_policy",
+      "output_schema": {
+        "failed_login_lockout": "",
+        "failed_login_lockout_max_attempts": "",
+        "failed_login_lockout_period": "",
+        "failed_login_lockout_permanent": "",
+        "inactivity_lockout": "",
+        "inactivity_lockout_period": ""
+      },
+      "parameters": [
+      ]
+    }
+  ]
+}
