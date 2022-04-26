@@ -1,0 +1,558 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - URLScan.io - 1.1.0",
+      "description": "Sample playbooks for \"URLScan.io\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "/api/3/images/f29c41a8-a877-4da3-9f29-b98b218816ad",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Search Hash",
+          "aliasName": null,
+          "description": "Searches and returns information for a specific hash from URLScan.io based on the hash value you have specified.",
+          "collection": "/api/3/workflow_collections/ba9832a5-db35-401f-acd8-a7a397266cd9",
+          "tag": "#URLScan.io",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e1c75834-0a22-452e-9ba1-09d79ccec0b7",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "ec6d7896-659f-4192-a1ed-9cd58926b103",
+                "title": "URLScan: Search Hash",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "left": "40",
+              "top": "40",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "e1c75834-0a22-452e-9ba1-09d79ccec0b7"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Search Hash",
+              "description": null,
+              "arguments": {
+                "name": "URLScan.io",
+                "config": "122f4de2-0bac-4556-b6d6-e0afc603da1a",
+                "params": {
+                  "hash": "351fae9836bfd71f1400ae73590a88a085ec3ed6286184ffb81793c8f0c27a6d"
+                },
+                "version": "1.1.0",
+                "connector": "urlscan-io",
+                "operation": "search_hash",
+                "operationTitle": "Search Hash",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "344",
+              "top": "167",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "ecf6d96d-8197-4426-a2a4-59df1f166be9"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "e6f34836-0433-4705-b118-050b32f4b217",
+              "name": "Start -> Search Hash",
+              "label": null,
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/ecf6d96d-8197-4426-a2a4-59df1f166be9",
+              "sourceStep": "/api/3/workflow_steps/e1c75834-0a22-452e-9ba1-09d79ccec0b7"
+            }
+          ],
+          "versions": null,
+          "lastModifyDate": 1597068594,
+          "uuid": "d5b223ab-1f28-4d1e-a59c-dcfc34df919b",
+          "recordTags": [
+            "/api/3/tags/urlscan-io"
+          ],
+          "isPrivate": false,
+          "owners": []
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Submit URL",
+          "aliasName": null,
+          "description": "Submits a URL to URLScan.io for analysis.",
+          "collection": "/api/3/workflow_collections/ba9832a5-db35-401f-acd8-a7a397266cd9",
+          "tag": "#URLScan.io",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f2c9fc7d-636c-4ea1-a398-a0b818eaaa21",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Submit URL",
+              "description": null,
+              "arguments": {
+                "name": "URLScan.io",
+                "config": "122f4de2-0bac-4556-b6d6-e0afc603da1a",
+                "params": {
+                  "url": "https://urlscan.io",
+                  "private": false
+                },
+                "version": "1.1.0",
+                "connector": "urlscan-io",
+                "operation": "submit_url",
+                "operationTitle": "Submit URL",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "424",
+              "top": "164",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "c9ea2ddb-284e-4319-b0a4-f1baebd77456"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "6763be36-e37d-4109-9a58-ee9e0a22254d",
+                "title": "URLScan: Submit URL",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "left": "240",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "f2c9fc7d-636c-4ea1-a398-a0b818eaaa21"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "36c7cf28-2fa1-4d87-84a6-b0cd9dce9704",
+              "name": "Alerts -> Submit URL",
+              "label": null,
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/c9ea2ddb-284e-4319-b0a4-f1baebd77456",
+              "sourceStep": "/api/3/workflow_steps/f2c9fc7d-636c-4ea1-a398-a0b818eaaa21"
+            }
+          ],
+          "versions": null,
+          "lastModifyDate": 1597068460,
+          "uuid": "1aebae17-74ba-4280-baf3-466ab82fb5cb",
+          "recordTags": [
+            "/api/3/tags/urlscan-io"
+          ],
+          "isPrivate": false,
+          "owners": []
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Custom Search",
+          "aliasName": null,
+          "description": "Retrieves information from URLScan.io based on the query you have specified.",
+          "collection": "/api/3/workflow_collections/ba9832a5-db35-401f-acd8-a7a397266cd9",
+          "tag": "#URLScan.io",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f4774ab2-d88d-4866-a06f-6404b0ec9f3a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Custom Search",
+              "description": null,
+              "arguments": {
+                "name": "URLScan.io",
+                "config": "122f4de2-0bac-4556-b6d6-e0afc603da1a",
+                "params": {
+                  "size": "",
+                  "query": "(page.domain:urlscan.io AND country:DE)"
+                },
+                "version": "1.1.0",
+                "connector": "urlscan-io",
+                "operation": "custom_search",
+                "operationTitle": "Custom Search",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "349",
+              "top": "184",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "b74c1ccc-1e74-4ef7-8707-5e988c9d78a9"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "0eb92cb9-988b-4c4f-9e57-c6792de3b9a0",
+                "title": "URLScan: Custom Search",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "left": "40",
+              "top": "40",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "f4774ab2-d88d-4866-a06f-6404b0ec9f3a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f8d85a45-f4f5-4d93-9150-d79f4232032d",
+              "name": "Start -> Custom Search",
+              "label": null,
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/b74c1ccc-1e74-4ef7-8707-5e988c9d78a9",
+              "sourceStep": "/api/3/workflow_steps/f4774ab2-d88d-4866-a06f-6404b0ec9f3a"
+            }
+          ],
+          "versions": null,
+          "lastModifyDate": 1597068197,
+          "uuid": "93e3bff1-25da-4a59-a317-8653c00f330a",
+          "recordTags": [
+            "/api/3/tags/urlscan-io"
+          ],
+          "isPrivate": false,
+          "owners": []
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Report",
+          "aliasName": null,
+          "description": "Retrieves a report from URLScan.io for the URLs that you have already submitted to the URLScan.io for analysis. Reports are retrieved based on the scan_id of the sample.",
+          "collection": "/api/3/workflow_collections/ba9832a5-db35-401f-acd8-a7a397266cd9",
+          "tag": "#URLScan.io",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4268beeb-c7c2-4a16-b1f8-20e64b751067",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Report",
+              "description": null,
+              "arguments": {
+                "name": "URLScan.io",
+                "config": "122f4de2-0bac-4556-b6d6-e0afc603da1a",
+                "params": {
+                  "scan_id": "0da9192c-bc91-4180-a013-93bfb2d65841"
+                },
+                "version": "1.1.0",
+                "connector": "urlscan-io",
+                "operation": "get_report",
+                "operationTitle": "Get Report",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "402",
+              "top": "150",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "20459d15-3cfd-4b07-8509-28b12a0e14a3"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "f946e305-ed2a-4129-b8a4-5c43e5a20d2b",
+                "title": "URLScan: Get Report",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "_promptexpanded": true,
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "left": "240",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "4268beeb-c7c2-4a16-b1f8-20e64b751067"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d5e005ca-27ee-4274-88ef-015ad758b345",
+              "name": "Alerts -> Get Report",
+              "label": null,
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/20459d15-3cfd-4b07-8509-28b12a0e14a3",
+              "sourceStep": "/api/3/workflow_steps/4268beeb-c7c2-4a16-b1f8-20e64b751067"
+            }
+          ],
+          "versions": null,
+          "lastModifyDate": 1597068110,
+          "uuid": "ceb70916-fdfd-4223-b07d-e869ae82c47a",
+          "recordTags": [
+            "/api/3/tags/urlscan-io"
+          ],
+          "isPrivate": false,
+          "owners": []
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Search Domain",
+          "aliasName": null,
+          "description": "Searches and returns information for a specific domain from URLScan.io based on the domain name you have specified.",
+          "collection": "/api/3/workflow_collections/ba9832a5-db35-401f-acd8-a7a397266cd9",
+          "tag": "#URLScan.io",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/985005e0-e9ba-4be2-8b1c-1bfbb58411d5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Search Domain",
+              "description": null,
+              "arguments": {
+                "name": "URLScan.io",
+                "config": "122f4de2-0bac-4556-b6d6-e0afc603da1a",
+                "params": {
+                  "domain": "urlscan.io"
+                },
+                "version": "1.1.0",
+                "connector": "urlscan-io",
+                "operation": "search_domain",
+                "operationTitle": "Search Domain",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "540",
+              "top": "152",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "002d119a-5ce7-4e3e-b32d-537e249b85d2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "548ddfae-cba5-42b2-8638-da4f44fb9b2d",
+                "title": "URLScan: Search Domain",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "left": "240",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "985005e0-e9ba-4be2-8b1c-1bfbb58411d5"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4a6cd4d3-51aa-42dd-b919-56be42e529c2",
+              "name": "Alerts -> Search Domain",
+              "label": null,
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/002d119a-5ce7-4e3e-b32d-537e249b85d2",
+              "sourceStep": "/api/3/workflow_steps/985005e0-e9ba-4be2-8b1c-1bfbb58411d5"
+            }
+          ],
+          "versions": null,
+          "lastModifyDate": 1597068156,
+          "uuid": "64b346f1-8547-4613-97ac-e5b6c2a20245",
+          "recordTags": [
+            "/api/3/tags/urlscan-io"
+          ],
+          "isPrivate": false,
+          "owners": []
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Search IP",
+          "aliasName": null,
+          "description": "Searches and returns information for a specific IP from URLScan.io based on the IP address you have specified.",
+          "collection": "/api/3/workflow_collections/ba9832a5-db35-401f-acd8-a7a397266cd9",
+          "tag": "#URLScan.io",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7f09b5ac-b99a-428d-93b7-7337f6e715a4",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "a6ee205e-9402-4d04-a8ea-e198037b6e1b",
+                "title": "URLScan: Search IP",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "left": "240",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "7f09b5ac-b99a-428d-93b7-7337f6e715a4"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Search IP",
+              "description": null,
+              "arguments": {
+                "name": "URLScan.io",
+                "config": "122f4de2-0bac-4556-b6d6-e0afc603da1a",
+                "params": {
+                  "ip": "148.251.45.170"
+                },
+                "version": "1.1.0",
+                "connector": "urlscan-io",
+                "operation": "search_ip",
+                "operationTitle": "Search IP",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "549",
+              "top": "142",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "f171b4b1-5efe-40eb-9aa7-98b7569a6c77"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "710fd98f-314c-48b5-8f91-abd2c6f15584",
+              "name": "Alerts -> Search IP",
+              "label": null,
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/f171b4b1-5efe-40eb-9aa7-98b7569a6c77",
+              "sourceStep": "/api/3/workflow_steps/7f09b5ac-b99a-428d-93b7-7337f6e715a4"
+            }
+          ],
+          "versions": null,
+          "lastModifyDate": 1597068829,
+          "uuid": "11332966-f43e-4608-926d-bc0adc84b879",
+          "recordTags": [
+            "/api/3/tags/urlscan-io"
+          ],
+          "isPrivate": false,
+          "owners": []
+        }
+      ],
+      "uuid": "ba9832a5-db35-401f-acd8-a7a397266cd9",
+      "recordTags": []
+    }
+  ],
+  "exported_tags": [
+    "urlscan-io"
+  ]
+}

@@ -1,0 +1,889 @@
+{
+  "name": "fortinet-fortiauthenticator",
+  "label": "FortiAuthenticator",
+  "version": "1.0.0",
+  "description": "FortiAuthenticator provides centralized authentication services for the Fortinet Security Fabric including single sign on services, certificate management, and guest management.\n\n",
+  "publisher": "Community",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "Zero trust",
+  "icon_small_name": "fortiauthenticator_small.png",
+  "icon_large_name": "fortiauthenticator_large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server",
+        "description": "URL/IP address of the FortiAuthenticator server to which you will connect and perform automated operations.",
+        "tooltip": "URL of the FortiAuthenticator server to which you will connect and perform automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "value": ""
+      },
+      {
+        "title": "Username",
+        "type": "text",
+        "name": "username",
+        "description": "Username that is configured for your account for using the FortiAuthenticator server.",
+        "tooltip": "Username that is configured for your account for using the FortiAuthenticator server.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "API Key",
+        "type": "password",
+        "name": "api_key",
+        "description": "API key that is configured for your account for using the FortiAuthenticator server.",
+        "tooltip": "API key that is configured for your account for using the FortiAuthenticator server.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_schema",
+      "title": "Get Schema",
+      "description": "Retrieves a report for all the endpoint actions within FortiAuthenticator",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_schema",
+      "output_schema": {
+        "auth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "emergencytoken": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fabric": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fgtgroupfilter": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortiguardmessages": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortitokenmobilelicenses": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortitokenmobileprovisioning": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "fortitokens": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ftpservers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "iamaccounts": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "iamusers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ldapusers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "licensing": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "localapiadmin": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "localgroup-memberships": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "localusers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "logsettings": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "macdevices": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "macgroup-memberships": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "macgroups": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "oauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "offlinehotpupdate": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "offlineotp": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "passwordpolicies": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "pushauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "pushauthresp": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "pushpoll": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiusclients": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiuspolicies": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiuspolicyclient": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "radiususers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "realmauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "recovery": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "scepreqs": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "scheduledbackupsettings": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "smtpservers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ssoauth": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "ssogroup": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "syslogservers": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "system": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "systeminfo": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "tacplusclients": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "tacpluspolicies": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "tacpluspolicyclient": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "transfertoken": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "usercerts": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "userfortitokenpolicy": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "usergroups": {
+          "list_endpoint": "",
+          "schema": ""
+        },
+        "userlockoutpolicy": {
+          "list_endpoint": "",
+          "schema": ""
+        }
+      },
+      "parameters": [
+      ]
+    },
+    {
+      "operation": "get_users",
+      "title": "Get Local Users",
+      "description": "This endpoint represents local user resource, namely a user account. This resource can be found in the FortiAuthenticator GUI under Authentication > Local Users..",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_users",
+      "output_schema": {
+        "meta": {
+          "limit": "",
+          "next": "",
+          "offset": "",
+          "previous": "",
+          "total_count": ""
+        },
+        "objects": [
+          {
+            "active": "",
+            "address": "",
+            "change_password": "",
+            "city": "",
+            "country": "",
+            "custom1": "",
+            "custom2": "",
+            "custom3": "",
+            "email": "",
+            "expires_at": "",
+            "fido": "",
+            "first_name": "",
+            "ftk_only": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mail_host": "",
+            "mail_routing_address": "",
+            "mobile_number": "",
+            "phone_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "state": "",
+            "token_auth": "",
+            "token_fas": "",
+            "token_serial": "",
+            "token_type": "",
+            "user_groups": [],
+            "username": ""
+          }
+        ]
+      },
+      "parameters": [
+      ]
+    },
+    {
+      "operation": "get_local_user",
+      "title": "Get Specific Local User",
+      "description": "Get Local Use by ID",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_local_user",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "Search User By",
+          "name": "output_mode",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "ID",
+            "Username",
+            "Email"
+          ],
+          "tooltip": "Select the method of returning the Feed Data information. You can choose between the data being returned in the JSON format (Return as a JSON) or being written to a file on the FortiSOAR server (Save to File). If you choose the 'Save to File' option, then in the Filename field, specify the name of the file in which you want to save the feed information retrieved from Anomali Limo.",
+          "description": "Select the method of returning the Feed Data information. You can choose between the data being returned in the JSON format (Return as a JSON) or being written to a file on the FortiSOAR server (Save to File). If you choose the 'Save to File' option, then in the Filename field, specify the name of the file in which you want to save the feed information retrieved from Anomali Limo.",
+          "onchange": {
+            "ID": [
+              {
+                "title": "User ID",
+                "type": "text",
+                "name": "id",
+                "description": "User ID for query.",
+                "tooltip": "User ID for query.",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": ""
+              }
+            ],
+            "Username": [
+              {
+                "title": "Username",
+                "type": "text",
+                "name": "username",
+                "description": "Username for search",
+                "tooltip": "username for search",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": ""
+              }
+            ],
+            "Email": [
+              {
+                "title": "Search by Email",
+                "type": "text",
+                "name": "email",
+                "description": "Email address for search",
+                "tooltip": "Email address for search",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "operation": "create_local_user",
+      "title": "Create Local User",
+      "description": "This endpoint represents local user resource, namely a user account. This resource can be found in the FortiAuthenticator GUI under Authentication > Local Users.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "create_local_user",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_answer": "",
+        "recovery_by_question": "",
+        "recovery_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "username",
+          "type": "text",
+          "name": "username",
+          "description": "Create a new user. max length = 253, contains only letters, numbers and @/./+/-/_ characters",
+          "tooltip": "max length = 253, contains only letters, numbers and @/./+/-/_ characters",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Password",
+          "type": "password",
+          "name": "password",
+          "description": "Password for the user. max length = 50",
+          "tooltip": "max length = 50",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Email",
+          "type": "text",
+          "name": "email",
+          "description": "Email address for the user",
+          "tooltip": "Must be a valid e-mail address",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "First Name",
+          "type": "text",
+          "name": "first_name",
+          "description": "First name of the user",
+          "tooltip": "max length = 30",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Last Name",
+          "type": "text",
+          "name": "last_name",
+          "description": "Last name of the user",
+          "tooltip": "max length = 30",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Account Status",
+          "type": "checkbox",
+          "name": "active",
+          "description": "Account Status",
+          "tooltip": "Status of account",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "operation": "update_user_status",
+      "title": "Update Local User Status",
+      "description": "Activate/Deactivates local user.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "update_user_status",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "UserID",
+          "type": "text",
+          "name": "userid",
+          "description": "UserID to deactivate.",
+          "tooltip": "UserID to deactivate. ",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Active/Deactive",
+          "type": "checkbox",
+          "name": "active",
+          "description": "UserID to deactivate.",
+          "tooltip": "UserID to deactivate. ",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "operation": "get_ladap_user",
+      "title": "Get Specific Ladap User",
+      "description": "Get Local Use by filter paramaters",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_ladap_user",
+      "output_schema": {
+        "meta": {
+          "limit": "",
+          "next": "",
+          "offset": "",
+          "previous": "",
+          "total_count": ""
+        },
+        "objects": [
+          {
+            "active": "",
+            "dn": "",
+            "email": "",
+            "fido": "",
+            "first_name": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mobile_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "server_address": "",
+            "server_name": "",
+            "token_auth": "",
+            "token_serial": "",
+            "token_type": "",
+            "username": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Search User By",
+          "name": "output_mode",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "ID",
+            "Username",
+            "Email"
+          ],
+          "tooltip": "Select the method of returning the Feed Data information. You can choose between the data being returned in the JSON format (Return as a JSON) or being written to a file on the FortiSOAR server (Save to File). If you choose the 'Save to File' option, then in the Filename field, specify the name of the file in which you want to save the feed information retrieved from Anomali Limo.",
+          "description": "Select the method of returning the Feed Data information. You can choose between the data being returned in the JSON format (Return as a JSON) or being written to a file on the FortiSOAR server (Save to File). If you choose the 'Save to File' option, then in the Filename field, specify the name of the file in which you want to save the feed information retrieved from Anomali Limo.",
+          "onchange": {
+            "ID": [
+              {
+                "title": "User ID",
+                "type": "text",
+                "name": "id",
+                "description": "User ID for query.",
+                "tooltip": "User ID for query.",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": ""
+              }
+            ],
+            "Username": [
+              {
+                "title": "Username",
+                "type": "text",
+                "name": "username",
+                "description": "Username for search",
+                "tooltip": "username for search",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": ""
+              }
+            ],
+            "Email": [
+              {
+                "title": "Search by Email",
+                "type": "text",
+                "name": "email",
+                "description": "Email address for search",
+                "tooltip": "Email address for search",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "operation": "update_ladapuser_status",
+      "title": "Update LDAP User",
+      "description": "Deactivates LDAP user.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "update_ladapuser_status",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "UserID",
+          "type": "text",
+          "name": "userid",
+          "description": "UserID to deactivate.",
+          "tooltip": "UserID to deactivate. ",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "operation": "get_radius_user",
+      "title": "Get Specific Radius User",
+      "description": "Get Radius Use by filter paramaters",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_radius_user",
+      "output_schema": {
+        "meta": {
+          "limit": "",
+          "next": "",
+          "offset": "",
+          "previous": "",
+          "total_count": ""
+        },
+        "objects": [
+          {
+            "active": "",
+            "dn": "",
+            "email": "",
+            "fido": "",
+            "first_name": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mobile_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "server_address": "",
+            "server_name": "",
+            "token_auth": "",
+            "token_serial": "",
+            "token_type": "",
+            "username": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "User ID",
+          "type": "text",
+          "name": "userid",
+          "description": "User ID for query.",
+          "tooltip": "User ID for query.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Username",
+          "type": "text",
+          "name": "username",
+          "description": "Username for search",
+          "tooltip": "username for search",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Search by Email",
+          "type": "text",
+          "name": "emailsearch",
+          "description": "Email address for search",
+          "tooltip": "Email address for search",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "operation": "update_radiususer_status",
+      "title": "Update Radius User",
+      "description": "Active/Deactive Radius user.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "deactivate_radiususer",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_by_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "UserID",
+          "type": "text",
+          "name": "userid",
+          "description": "UserID to deactivate.",
+          "tooltip": "UserID to deactivate. ",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "operation": "get_userlockout_policy",
+      "title": "User Lockout Policy Info",
+      "description": "This endpoint is used to query and edit user account lockout policy settings including the maximum number of failed login attempts, specify the lockout period, and enable inactive user lockouts.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_userlockout_policy",
+      "output_schema": {
+        "failed_login_lockout": "",
+        "failed_login_lockout_max_attempts": "",
+        "failed_login_lockout_period": "",
+        "failed_login_lockout_permanent": "",
+        "inactivity_lockout": "",
+        "inactivity_lockout_period": ""
+      },
+      "parameters": [
+      ]
+    }
+  ]
+}
