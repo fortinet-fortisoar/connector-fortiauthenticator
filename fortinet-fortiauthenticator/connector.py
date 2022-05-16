@@ -1,5 +1,5 @@
 """ Copyright start
-  Copyright (C) 2008 - 2020 Fortinet Inc.
+  Copyright (C) 2008 - 2022 Fortinet Inc.
   All rights reserved.
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end """
@@ -7,13 +7,13 @@
 from connectors.core.connector import Connector, get_logger, ConnectorError
 from .operations import operations, _check_health
 
-logger = get_logger('fortiauthenticator')
+logger = get_logger('fortinet-fortiauthenticator')
 
 
 class FortiAuthenticator(Connector):
     def execute(self, config, operation, params, **kwargs):
         action = operations.get(operation)
-        logger.info('executing {0}'.format(action))
+        logger.debug('executing {0}'.format(action))
         return action(config, params)
 
     def check_health(self, config):
