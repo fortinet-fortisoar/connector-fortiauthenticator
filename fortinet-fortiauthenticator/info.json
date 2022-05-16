@@ -342,16 +342,10 @@
       "enabled": true,
       "category": "investigation",
       "annotation": "get_local_user",
-      "output_schema": {
-        "meta": {
-          "limit": "",
-          "next": "",
-          "offset": "",
-          "previous": "",
-          "total_count": ""
-        },
-        "objects": [
-          {
+      "conditional_output_schema": [
+        {
+          "condition": "{{output_mode === 'ID'}}",
+          "output_schema": {
             "active": "",
             "address": "",
             "change_password": "",
@@ -383,8 +377,54 @@
             "user_groups": [],
             "username": ""
           }
-        ]
-      },
+        },
+        {
+          "condition": "{{output_mode === 'Username' || output_mode === 'Email'}}",
+          "output_schema": {
+            "meta": {
+              "limit": "",
+              "next": "",
+              "offset": "",
+              "previous": "",
+              "total_count": ""
+            },
+            "objects": [
+              {
+                "active": "",
+                "address": "",
+                "change_password": "",
+                "city": "",
+                "country": "",
+                "custom1": "",
+                "custom2": "",
+                "custom3": "",
+                "email": "",
+                "expires_at": "",
+                "fido": "",
+                "first_name": "",
+                "ftk_only": "",
+                "ftm_act_method": "",
+                "id": "",
+                "last_name": "",
+                "mail_host": "",
+                "mail_routing_address": "",
+                "mobile_number": "",
+                "phone_number": "",
+                "reason": "",
+                "recovery_by_question": "",
+                "resource_uri": "",
+                "state": "",
+                "token_auth": "",
+                "token_fas": "",
+                "token_serial": "",
+                "token_type": "",
+                "user_groups": [],
+                "username": ""
+              }
+            ]
+          }
+        }
+      ],
       "parameters": [
         {
           "title": "Search User By",
@@ -649,16 +689,10 @@
       "enabled": true,
       "category": "investigation",
       "annotation": "get_ldap_user",
-      "output_schema": {
-        "meta": {
-          "limit": "",
-          "next": "",
-          "offset": "",
-          "previous": "",
-          "total_count": ""
-        },
-        "objects": [
-          {
+      "conditional_output_schema": [
+        {
+          "condition": "{{output_mode === 'ID'}}",
+          "output_schema": {
             "active": "",
             "dn": "",
             "email": "",
@@ -678,8 +712,42 @@
             "token_type": "",
             "username": ""
           }
-        ]
-      },
+        },
+        {
+          "condition": "{{output_mode === 'Username' || output_mode === 'Email'}}",
+          "output_schema": {
+            "meta": {
+              "limit": "",
+              "next": "",
+              "offset": "",
+              "previous": "",
+              "total_count": ""
+            },
+            "objects": [
+              {
+                "active": "",
+                "dn": "",
+                "email": "",
+                "fido": "",
+                "first_name": "",
+                "ftm_act_method": "",
+                "id": "",
+                "last_name": "",
+                "mobile_number": "",
+                "reason": "",
+                "recovery_by_question": "",
+                "resource_uri": "",
+                "server_address": "",
+                "server_name": "",
+                "token_auth": "",
+                "token_serial": "",
+                "token_type": "",
+                "username": ""
+              }
+            ]
+          }
+        }
+      ],
       "parameters": [
         {
           "title": "Search User By",
@@ -865,16 +933,10 @@
       "enabled": true,
       "category": "investigation",
       "annotation": "get_radius_user",
-      "output_schema": {
-        "meta": {
-          "limit": "",
-          "next": "",
-          "offset": "",
-          "previous": "",
-          "total_count": ""
-        },
-        "objects": [
-          {
+      "conditional_output_schema": [
+        {
+          "condition": "{{output_mode === 'ID'}}",
+          "output_schema": {
             "active": "",
             "email": "",
             "fido": "",
@@ -890,8 +952,38 @@
             "token_type": "",
             "username": ""
           }
-        ]
-      },
+        },
+        {
+          "condition": "{{output_mode === 'Username' || output_mode === 'Email'}}",
+          "output_schema": {
+            "meta": {
+              "limit": "",
+              "next": "",
+              "offset": "",
+              "previous": "",
+              "total_count": ""
+            },
+            "objects": [
+              {
+                "active": "",
+                "email": "",
+                "fido": "",
+                "ftm_act_method": "",
+                "id": "",
+                "mobile_number": "",
+                "reason": "",
+                "resource_uri": "",
+                "server_address": "",
+                "server_name": "",
+                "token_auth": "",
+                "token_serial": "",
+                "token_type": "",
+                "username": ""
+              }
+            ]
+          }
+        }
+      ],
       "parameters": [
         {
           "title": "Search User By",
