@@ -3,8 +3,8 @@
   "label": "Fortinet FortiAuthenticator",
   "version": "1.0.0",
   "description": "FortiAuthenticator provides centralized authentication services for the Fortinet Security Fabric including single sign on services, certificate management, and guest management.",
-  "publisher": "Community",
-  "cs_approved": false,
+  "publisher": "Fortinet",
+  "cs_approved": true,
   "cs_compatible": true,
   "category": "Threat Intelligence",
   "icon_small_name": "fortiauthenticator_small.png",
@@ -321,36 +321,47 @@
       "category": "investigation",
       "annotation": "get_local_user",
       "output_schema": {
-        "active": "",
-        "address": "",
-        "change_password": "",
-        "city": "",
-        "country": "",
-        "custom1": "",
-        "custom2": "",
-        "custom3": "",
-        "email": "",
-        "expires_at": "",
-        "fido": "",
-        "first_name": "",
-        "ftk_only": "",
-        "ftm_act_method": "",
-        "id": "",
-        "last_name": "",
-        "mail_host": "",
-        "mail_routing_address": "",
-        "mobile_number": "",
-        "phone_number": "",
-        "reason": "",
-        "recovery_by_question": "",
-        "resource_uri": "",
-        "state": "",
-        "token_auth": "",
-        "token_fas": "",
-        "token_serial": "",
-        "token_type": "",
-        "user_groups": [],
-        "username": ""
+        "meta": {
+          "limit": "",
+          "next": "",
+          "offset": "",
+          "previous": "",
+          "total_count": ""
+        },
+        "objects": [
+          {
+            "active": "",
+            "address": "",
+            "change_password": "",
+            "city": "",
+            "country": "",
+            "custom1": "",
+            "custom2": "",
+            "custom3": "",
+            "email": "",
+            "expires_at": "",
+            "fido": "",
+            "first_name": "",
+            "ftk_only": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mail_host": "",
+            "mail_routing_address": "",
+            "mobile_number": "",
+            "phone_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "state": "",
+            "token_auth": "",
+            "token_fas": "",
+            "token_serial": "",
+            "token_type": "",
+            "user_groups": [],
+            "username": ""
+          }
+        ]
       },
       "parameters": [
         {
@@ -577,6 +588,17 @@
       ]
     },
     {
+      "operation": "get_ldap_user_list",
+      "title": "Get LDAP User List",
+      "description": "Retrieves list of all LDAP user from Fortinet FortiAuthenticator.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_ldap_user_list",
+      "output_schema": {},
+      "parameters": [
+      ]
+    },
+    {
       "operation": "get_ldap_user",
       "title": "Get Specific LDAP User",
       "description": "Retrieves details of a specific LDAP user from Fortinet FortiAuthenticator based on the input parameters User ID, Username and Email you have specified.",
@@ -639,8 +661,7 @@
                 "tooltip": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
-                "visible": true,
-                "value": ""
+                "visible": true
               }
             ],
             "Username": [
@@ -652,8 +673,7 @@
                 "tooltip": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
-                "visible": true,
-                "value": ""
+                "visible": true
               }
             ],
             "Email": [
@@ -665,8 +685,7 @@
                 "tooltip": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
-                "visible": true,
-                "value": ""
+                "visible": true
               }
             ]
           }
@@ -737,6 +756,17 @@
       ]
     },
     {
+      "operation": "get_radius_user_list",
+      "title": "Get Radius User List",
+      "description": "Retrieves list of all radius user from Fortinet FortiAuthenticator.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "get_radius_user_list",
+      "output_schema": {},
+      "parameters": [
+      ]
+    },
+    {
       "operation": "get_radius_user",
       "title": "Get Specific Radius User",
       "description": "Retrieves details of a specific radius user from Fortinet FortiAuthenticator based on the input parameters User ID, Username and Email you have specified.",
@@ -776,34 +806,57 @@
       },
       "parameters": [
         {
-          "title": "User ID",
-          "type": "text",
-          "name": "userid",
-          "description": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-          "tooltip": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-          "required": false,
+          "title": "Search User By",
+          "name": "output_mode",
+          "visible": true,
+          "required": true,
           "editable": true,
-          "visible": true
-        },
-        {
-          "title": "Username",
-          "type": "text",
-          "name": "username",
-          "description": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-          "tooltip": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-          "required": false,
-          "editable": true,
-          "visible": true
-        },
-        {
-          "title": "Search by Email",
-          "type": "text",
-          "name": "emailsearch",
-          "description": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-          "tooltip": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-          "required": false,
-          "editable": true,
-          "visible": true
+          "type": "select",
+          "options": [
+            "ID",
+            "Username",
+            "Email"
+          ],
+          "description": "Select the action that you want to perform on the specified LDAP user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "tooltip": "Select the action that you want to perform on the specified LDAP user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "onchange": {
+            "ID": [
+              {
+                "title": "User ID",
+                "type": "text",
+                "name": "id",
+                "description": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "required": false,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Username": [
+              {
+                "title": "Username",
+                "type": "text",
+                "name": "username",
+                "description": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "required": false,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Email": [
+              {
+                "title": "Search by Email",
+                "type": "text",
+                "name": "email",
+                "description": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "required": false,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -813,7 +866,7 @@
       "description": "Update an specific radius user status in Fortinet FortiAuthenticator based on the User ID and Active/Deactive you have specified.",
       "enabled": true,
       "category": "investigation",
-      "annotation": "deactivate_radiususer",
+      "annotation": "update_radiususer_status",
       "output_schema": {
         "active": "",
         "address": "",
