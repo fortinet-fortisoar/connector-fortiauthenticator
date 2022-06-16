@@ -583,6 +583,16 @@
           "editable": true,
           "visible": true,
           "value": true
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to create local user in Fortinet FortiAuthenticator.",
+          "description": "Additional fields, in the JSON format, based on which you want to create local user in Fortinet FortiAuthenticator."
         }
       ]
     },
@@ -656,7 +666,37 @@
       "enabled": true,
       "category": "investigation",
       "annotation": "get_ldap_user_list",
-      "output_schema": {},
+      "output_schema": {
+        "meta": {
+          "limit": "",
+          "next": "",
+          "offset": "",
+          "previous": "",
+          "total_count": ""
+        },
+        "objects": [
+          {
+            "active": "",
+            "dn": "",
+            "email": "",
+            "fido": "",
+            "first_name": "",
+            "ftm_act_method": "",
+            "id": "",
+            "last_name": "",
+            "mobile_number": "",
+            "reason": "",
+            "recovery_by_question": "",
+            "resource_uri": "",
+            "server_address": "",
+            "server_name": "",
+            "token_auth": "",
+            "token_serial": "",
+            "token_type": "",
+            "username": ""
+          }
+        ]
+      },
       "parameters": [
         {
           "title": "Limit",

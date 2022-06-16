@@ -49,7 +49,7 @@ class FortiAuthenticator(object):
         except requests.exceptions.ReadTimeout:
             raise ConnectorError('The server did not send any data in the allotted amount of time')
         except requests.exceptions.ConnectionError:
-            raise ConnectorError('Invalid endpoint or credentials')
+            raise ConnectorError('Invalid URL or Credentials')
         except Exception as err:
             logger.exception(str(err))
             raise ConnectorError(str(err))
@@ -62,7 +62,8 @@ def _check_health(config):
         if response:
             return True
     except Exception as err:
-        raise ConnectorError('Invalid URL or Credentials')
+        logger.exception('{0}'.format(err))
+        raise ConnectorError('{0}'.format(err))
 
 
 def get_params(params):
@@ -77,6 +78,7 @@ def get_schema(config, params):
 
 def get_users(config, params):
     fa = FortiAuthenticator(config)
+    params = get_params(params)
     return fa.make_api_call(endpoint='api/v1/localusers/', params=params)
 
 
@@ -92,6 +94,10 @@ def get_local_user(config, params):
 
 def create_local_user(config, params):
     fa = FortiAuthenticator(config)
+    additional_fields = params.get('additional_fields')
+    if additional_fields:
+        params.update(additional_fields)
+    del params['additional_fields']
     params = get_params(params)
     return fa.make_api_call(endpoint='api/v1/localusers/', data=json.dumps(params), method='POST')
 
@@ -106,6 +112,7 @@ def update_user_status(config, params):
 
 def get_ldap_user_list(config, params):
     fa = FortiAuthenticator(config)
+    params = get_params(params)
     return fa.make_api_call(endpoint='api/v1/ldapusers/', params=params)
 
 
@@ -129,6 +136,7 @@ def update_ldapuser_status(config, params):
 
 def get_radius_user_list(config, params):
     fa = FortiAuthenticator(config)
+    params = get_params(params)
     return fa.make_api_call(endpoint='api/v1/radiususers/', params=params)
 
 
