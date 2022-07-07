@@ -261,8 +261,123 @@
       ]
     },
     {
+      "operation": "create_local_user",
+      "title": "Create Local User",
+      "description": "Create a new local user in Fortinet FortiAuthenticator based on the Username, Password, Email, and other input parameters you have specified.",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "create_local_user",
+      "output_schema": {
+        "active": "",
+        "address": "",
+        "change_password": "",
+        "city": "",
+        "country": "",
+        "custom1": "",
+        "custom2": "",
+        "custom3": "",
+        "email": "",
+        "expires_at": "",
+        "fido": "",
+        "first_name": "",
+        "ftk_only": "",
+        "ftm_act_method": "",
+        "id": "",
+        "last_name": "",
+        "mail_host": "",
+        "mail_routing_address": "",
+        "mobile_number": "",
+        "phone_number": "",
+        "reason": "",
+        "recovery_answer": "",
+        "recovery_by_question": "",
+        "recovery_question": "",
+        "resource_uri": "",
+        "state": "",
+        "token_auth": "",
+        "token_fas": "",
+        "token_serial": "",
+        "token_type": "",
+        "user_groups": [],
+        "username": ""
+      },
+      "parameters": [
+        {
+          "title": "Username",
+          "type": "text",
+          "name": "username",
+          "description": "Name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 253, contains only letters, numbers and @/./+/-/_ characters",
+          "tooltip": "Name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 253, contains only letters, numbers and @/./+/-/_ characters",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Password",
+          "type": "password",
+          "name": "password",
+          "description": "Password for the user from which you want to create a local user in Fortinet FortiAuthenticator.Note: max length = 50",
+          "tooltip": "Password for the user from which you want to create a local user in Fortinet FortiAuthenticator.Note: max length = 50",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Email",
+          "type": "text",
+          "name": "email",
+          "description": "Email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
+          "tooltip": "Email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "First Name",
+          "type": "text",
+          "name": "first_name",
+          "description": "First name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "tooltip": "First name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Last Name",
+          "type": "text",
+          "name": "last_name",
+          "description": "Last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "tooltip": "Last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Activate/Deactivate",
+          "type": "checkbox",
+          "name": "active",
+          "description": "Account Status of the user from which you want to create a local user in Fortinet FortiAuthenticator. Default set as True.",
+          "tooltip": "Account Status of the user from which you want to create a local user in Fortinet FortiAuthenticator. Default set as True",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": true
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to create local user in Fortinet FortiAuthenticator.",
+          "description": "Additional fields, in the JSON format, based on which you want to create local user in Fortinet FortiAuthenticator."
+        }
+      ]
+    },
+    {
       "operation": "get_users",
-      "title": "Get Local Users",
+      "title": "Get Local User List",
       "description": "Retrieves a list of local users from Fortinet FortiAuthenticator.",
       "enabled": true,
       "category": "investigation",
@@ -482,121 +597,6 @@
       ]
     },
     {
-      "operation": "create_local_user",
-      "title": "Create Local User",
-      "description": "Create a new local user in Fortinet FortiAuthenticator based on the Username, Password, Email, and other input parameters you have specified.",
-      "enabled": true,
-      "category": "investigation",
-      "annotation": "create_local_user",
-      "output_schema": {
-        "active": "",
-        "address": "",
-        "change_password": "",
-        "city": "",
-        "country": "",
-        "custom1": "",
-        "custom2": "",
-        "custom3": "",
-        "email": "",
-        "expires_at": "",
-        "fido": "",
-        "first_name": "",
-        "ftk_only": "",
-        "ftm_act_method": "",
-        "id": "",
-        "last_name": "",
-        "mail_host": "",
-        "mail_routing_address": "",
-        "mobile_number": "",
-        "phone_number": "",
-        "reason": "",
-        "recovery_answer": "",
-        "recovery_by_question": "",
-        "recovery_question": "",
-        "resource_uri": "",
-        "state": "",
-        "token_auth": "",
-        "token_fas": "",
-        "token_serial": "",
-        "token_type": "",
-        "user_groups": [],
-        "username": ""
-      },
-      "parameters": [
-        {
-          "title": "Username",
-          "type": "text",
-          "name": "username",
-          "description": "Name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 253, contains only letters, numbers and @/./+/-/_ characters",
-          "tooltip": "Name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 253, contains only letters, numbers and @/./+/-/_ characters",
-          "required": true,
-          "editable": true,
-          "visible": true
-        },
-        {
-          "title": "Password",
-          "type": "password",
-          "name": "password",
-          "description": "Password for the user from which you want to create a local user in Fortinet FortiAuthenticator.Note: max length = 50",
-          "tooltip": "Password for the user from which you want to create a local user in Fortinet FortiAuthenticator.Note: max length = 50",
-          "required": true,
-          "editable": true,
-          "visible": true
-        },
-        {
-          "title": "Email",
-          "type": "text",
-          "name": "email",
-          "description": "Email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
-          "tooltip": "Email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
-          "required": true,
-          "editable": true,
-          "visible": true
-        },
-        {
-          "title": "First Name",
-          "type": "text",
-          "name": "first_name",
-          "description": "First name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
-          "tooltip": "First name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
-          "required": true,
-          "editable": true,
-          "visible": true
-        },
-        {
-          "title": "Last Name",
-          "type": "text",
-          "name": "last_name",
-          "description": "Last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
-          "tooltip": "Last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
-          "required": true,
-          "editable": true,
-          "visible": true
-        },
-        {
-          "title": "Account Status",
-          "type": "checkbox",
-          "name": "active",
-          "description": "Account Status of the user from which you want to create a local user in Fortinet FortiAuthenticator. Default set as True.",
-          "tooltip": "Account Status of the user from which you want to create a local user in Fortinet FortiAuthenticator. Default set as True",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "value": true
-        },
-        {
-          "title": "Additional Fields",
-          "name": "additional_fields",
-          "type": "json",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "tooltip": "Additional fields, in the JSON format, based on which you want to create local user in Fortinet FortiAuthenticator.",
-          "description": "Additional fields, in the JSON format, based on which you want to create local user in Fortinet FortiAuthenticator."
-        }
-      ]
-    },
-    {
       "operation": "update_user_status",
       "title": "Update Local User Status",
       "description": "Update an specific local user status in Fortinet FortiAuthenticator based on the User ID and Active/Deactive you have specified.",
@@ -647,7 +647,7 @@
           "visible": true
         },
         {
-          "title": "Active/Deactive",
+          "title": "Activate/Deactivate",
           "type": "checkbox",
           "name": "active",
           "description": "Used to activate/deactivate local user status in Fortinet FortiAuthenticator. Default set as True.",
@@ -895,7 +895,7 @@
           "visible": true
         },
         {
-          "title": "Active/Deactive",
+          "title": "Activate/Deactivate",
           "type": "checkbox",
           "name": "active",
           "description": "Used to activate/deactivate LDAP user status in Fortinet FortiAuthenticator. Default set as True.",
@@ -1115,7 +1115,7 @@
           "visible": true
         },
         {
-          "title": "Active/Deactive",
+          "title": "Activate/Deactivate",
           "type": "checkbox",
           "name": "active",
           "description": "Used to activate/deactivate radius user status in Fortinet FortiAuthenticator. Default set as True.",
