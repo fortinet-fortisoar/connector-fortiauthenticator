@@ -7,16 +7,16 @@
   "cs_approved": true,
   "cs_compatible": true,
   "category": "Threat Intelligence",
-  "icon_small_name": "fortiauthenticator_small.png",
-  "icon_large_name": "fortiauthenticator_large.png",
-  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/fortinet-fortiauthenticator/320/fortinet-fortiauthenticator-v1-0-0",
   "configuration": {
     "fields": [
       {
         "title": "Server URL",
         "type": "text",
         "name": "server",
-        "description": "URL of the Fortinet FortiAuthenticator server to which you will connect and perform automated operations.",
+        "description": "Specify the URL of the Fortinet FortiAuthenticator server to which you will connect and perform automated operations.",
         "required": true,
         "editable": true,
         "visible": true
@@ -25,7 +25,7 @@
         "title": "Username",
         "type": "text",
         "name": "username",
-        "description": "Username used to access the Fortinet FortiAuthenticator server to which you will connect and perform the automated operations.",
+        "description": "Specify the Username used to access the Fortinet FortiAuthenticator server to which you will connect and perform the automated operations.",
         "required": true,
         "editable": true,
         "visible": true
@@ -34,7 +34,7 @@
         "title": "API Key",
         "type": "password",
         "name": "api_key",
-        "description": "API key that is configured for your account for using the Fortinet FortiAuthenticator APIs.",
+        "description": "Specify the API key configured for your account for using the Fortinet FortiAuthenticator APIs.",
         "required": true,
         "editable": true,
         "visible": true
@@ -43,7 +43,7 @@
         "title": "Verify SSL",
         "name": "verify_ssl",
         "type": "checkbox",
-        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.",
         "required": false,
         "editable": true,
         "visible": true,
@@ -55,7 +55,7 @@
     {
       "operation": "get_schema",
       "title": "Get Schema",
-      "description": "Retrieves a report for all the endpoint actions within FortiAuthenticator",
+      "description": "Retrieves a report for all the endpoint actions within FortiAuthenticator.",
       "enabled": true,
       "category": "investigation",
       "annotation": "get_schema",
@@ -263,7 +263,7 @@
     {
       "operation": "create_local_user",
       "title": "Create Local User",
-      "description": "Create a new local user in Fortinet FortiAuthenticator based on the Username, Password, Email, and other input parameters you have specified.",
+      "description": "Creates a new local user in Fortinet FortiAuthenticator based on the username, password, email, and other input parameters you have specified.",
       "enabled": true,
       "category": "investigation",
       "annotation": "create_local_user",
@@ -306,8 +306,8 @@
           "title": "Username",
           "type": "text",
           "name": "username",
-          "description": "Name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 253, contains only letters, numbers and @/./+/-/_ characters",
-          "tooltip": "Name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 253, contains only letters, numbers and @/./+/-/_ characters",
+          "description": "Specify the name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: You can specify a max length of 253 and the username must contain only letters, numbers, and @/./+/-/_ characters.",
+          "tooltip": "Specify the name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: You can specify a max length of 253 and the username must contain only letters, numbers, and @/./+/-/_ characters.",
           "required": true,
           "editable": true,
           "visible": true
@@ -316,8 +316,8 @@
           "title": "Password",
           "type": "password",
           "name": "password",
-          "description": "Password for the user from which you want to create a local user in Fortinet FortiAuthenticator.Note: max length = 50",
-          "tooltip": "Password for the user from which you want to create a local user in Fortinet FortiAuthenticator.Note: max length = 50",
+          "description": "Specify the password for the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: You can specify a max length of 50.",
+          "tooltip": "Specify the password for the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: You can specify a max length of 50.",
           "required": true,
           "editable": true,
           "visible": true
@@ -326,8 +326,8 @@
           "title": "Email",
           "type": "text",
           "name": "email",
-          "description": "Email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
-          "tooltip": "Email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
+          "description": "Specify the email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
+          "tooltip": "Specify the email address for the user from which you want to create a local user in Fortinet FortiAuthenticator.",
           "required": true,
           "editable": true,
           "visible": true
@@ -336,8 +336,8 @@
           "title": "First Name",
           "type": "text",
           "name": "first_name",
-          "description": "First name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
-          "tooltip": "First name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "description": "Specify the first name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: You can specify a max length of 30.",
+          "tooltip": "Specify the first name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: You can specify a max length of 30.",
           "required": true,
           "editable": true,
           "visible": true
@@ -346,8 +346,8 @@
           "title": "Last Name",
           "type": "text",
           "name": "last_name",
-          "description": "Last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
-          "tooltip": "Last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: max length = 30",
+          "description": "Specify the last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: You can specify a max length of 30.",
+          "tooltip": "Specify the last name of the user from which you want to create a local user in Fortinet FortiAuthenticator. Note: You can specify a max length of 30.",
           "required": true,
           "editable": true,
           "visible": true
@@ -356,8 +356,8 @@
           "title": "Activate/Deactivate",
           "type": "checkbox",
           "name": "active",
-          "description": "Account Status of the user from which you want to create a local user in Fortinet FortiAuthenticator. Default set as True.",
-          "tooltip": "Account Status of the user from which you want to create a local user in Fortinet FortiAuthenticator. Default set as True",
+          "description": "Select this option (default is selected) to activate the account status of the user from which you want to create a local user in Fortinet FortiAuthenticator.",
+          "tooltip": "Select this option (default is selected) to activate the account status of the user from which you want to create a local user in Fortinet FortiAuthenticator.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -370,8 +370,8 @@
           "required": false,
           "editable": true,
           "visible": true,
-          "tooltip": "Additional fields, in the JSON format, based on which you want to create local user in Fortinet FortiAuthenticator.",
-          "description": "Additional fields, in the JSON format, based on which you want to create local user in Fortinet FortiAuthenticator."
+          "tooltip": "Specify additional fields, in the JSON format, that you want to add to the local user that you are creating in Fortinet FortiAuthenticator.",
+          "description": "Specify additional fields, in the JSON format, that you want to add to the local user that you are creating in Fortinet FortiAuthenticator."
         }
       ]
     },
@@ -428,32 +428,32 @@
       "parameters": [
         {
           "title": "Limit",
-          "description": "Maximum number of results, per page, that this operation should return. By default, this value is set as 20 or can be set up to a maximum of 1000.",
+          "description": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this value is set as 20 and the maximum is 1000.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "limit",
           "value": 20,
-          "tooltip": "Maximum number of results, per page, that this operation should return. By default, this value is set as 20 or can be set up to a maximum of 1000."
+          "tooltip": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this value is set as 20 and the maximum is 1000."
         },
         {
           "title": "Offset",
           "name": "offset",
-          "description": "Includes results at this offset within the full result set, where the first result is at position 0 (default).",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say users starting from the 10th user. By default, this is set as 0.",
           "value": 0,
           "type": "integer",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Includes results at this offset within the full result set, where the first result is at position 0 (default)."
+          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say users starting from the 10th user. By default, this is set as 0."
         }
       ]
     },
     {
       "operation": "get_local_user",
       "title": "Get Specific Local User",
-      "description": "Retrieves details of a specific local user from Fortinet FortiAuthenticator based on the input parameters User ID, Username and Email you have specified.",
+      "description": "Retrieves details of a specific local user from Fortinet FortiAuthenticator based on the user ID, username, or email you have specified.",
       "enabled": true,
       "category": "investigation",
       "annotation": "get_local_user",
@@ -543,7 +543,7 @@
       "parameters": [
         {
           "title": "Search User By",
-          "description": "Select the action that you want to perform on the specified local user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "description": "Select the method using which you want to search for the specific local user in the Fortinet FortiAuthenticator. You can search for the specific local user and retrieve its details using one of the following options: ID, Username, or Email.",
           "name": "output_mode",
           "visible": true,
           "required": true,
@@ -554,15 +554,15 @@
             "Username",
             "Email"
           ],
-          "tooltip": "Select the action that you want to perform on the specified local user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "tooltip": "Select the method using which you want to search for the specific local user in the Fortinet FortiAuthenticator. You can search for the specific local user and retrieve its details using one of the following options: ID, Username, or Email.",
           "onchange": {
             "ID": [
               {
                 "title": "User ID",
                 "type": "text",
                 "name": "id",
-                "description": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-                "tooltip": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "description": "If you choose 'ID', then in the User ID field specify the ID of the local user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "If you choose 'ID', then in the User ID field specify the ID of the local user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
                 "visible": true
@@ -573,8 +573,8 @@
                 "title": "Username",
                 "type": "text",
                 "name": "username",
-                "description": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-                "tooltip": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "description": "If you choose 'Username', then in the Username field specify the username of the local user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "If you choose 'Username', then in the Username field specify the username of the local user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
                 "visible": true
@@ -585,8 +585,8 @@
                 "title": "Search by Email",
                 "type": "text",
                 "name": "email",
-                "description": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-                "tooltip": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "description": "If you choose 'Email', then in the Email field specify the email address of the local user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "If you choose 'Email', then in the Email field specify the email address of the local user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
                 "visible": true
@@ -599,7 +599,7 @@
     {
       "operation": "update_user_status",
       "title": "Update Local User Status",
-      "description": "Update an specific local user status in Fortinet FortiAuthenticator based on the User ID and Active/Deactive you have specified.",
+      "description": "Updates the user status of a specific local user in Fortinet FortiAuthenticator based on the user ID and status you have specified.",
       "enabled": true,
       "category": "investigation",
       "annotation": "update_user_status",
@@ -640,8 +640,8 @@
           "title": "User ID",
           "type": "text",
           "name": "userid",
-          "description": "ID of the user from which you want to update a local user status in Fortinet FortiAuthenticator.",
-          "tooltip": "ID of the user from which you want to update a local user status in Fortinet FortiAuthenticator.",
+          "description": "Specify the ID of the user from which you want to update the status of a local user in Fortinet FortiAuthenticator.",
+          "tooltip": "Specify the ID of the user from which you want to update the status of a local user in Fortinet FortiAuthenticator.",
           "required": true,
           "editable": true,
           "visible": true
@@ -650,19 +650,19 @@
           "title": "Activate/Deactivate",
           "type": "checkbox",
           "name": "active",
-          "description": "Used to activate/deactivate local user status in Fortinet FortiAuthenticator. Default set as True.",
+          "description": "Select this option (default is selected) to activate the account status of the local user in Fortinet FortiAuthenticator. Clear this option to deactivate the account status of the local user in Fortinet FortiAuthenticator.",
           "required": true,
           "editable": true,
           "visible": true,
           "value": true,
-          "tooltip": "Used to activate/deactivate local user status in Fortinet FortiAuthenticator. Default set as True"
+          "tooltip": "Select this option (default is selected) to activate the account status of the local user in Fortinet FortiAuthenticator. Clear this option to deactivate the account status of the local user in Fortinet FortiAuthenticator."
         }
       ]
     },
     {
       "operation": "get_ldap_user_list",
       "title": "Get LDAP User List",
-      "description": "Retrieves list of all LDAP user from Fortinet FortiAuthenticator.",
+      "description": "Retrieves a list of LDAP users from Fortinet FortiAuthenticator.",
       "enabled": true,
       "category": "investigation",
       "annotation": "get_ldap_user_list",
@@ -700,32 +700,32 @@
       "parameters": [
         {
           "title": "Limit",
-          "description": "Maximum number of results, per page, that this operation should return. By default, this value is set as 20 or can be set up to a maximum of 1000.",
+          "description": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this value is set as 20 and the maximum is 1000.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "limit",
           "value": 20,
-          "tooltip": "Maximum number of results, per page, that this operation should return. By default, this value is set as 20 or can be set up to a maximum of 1000."
+          "tooltip": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this value is set as 20 and the maximum is 1000."
         },
         {
           "title": "Offset",
           "name": "offset",
-          "description": "Includes results at this offset within the full result set, where the first result is at position 0 (default).",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say users starting from the 10th user. By default, this is set as 0.",
           "value": 0,
           "type": "integer",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Includes results at this offset within the full result set, where the first result is at position 0 (default)."
+          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say users starting from the 10th user. By default, this is set as 0."
         }
       ]
     },
     {
       "operation": "get_ldap_user",
       "title": "Get Specific LDAP User",
-      "description": "Retrieves details of a specific LDAP user from Fortinet FortiAuthenticator based on the input parameters User ID, Username and Email you have specified.",
+      "description": "Retrieves details of a specific LDAP user from Fortinet FortiAuthenticator based on the user ID, username, or email you have specified.",
       "enabled": true,
       "category": "investigation",
       "annotation": "get_ldap_user",
@@ -801,16 +801,16 @@
             "Username",
             "Email"
           ],
-          "description": "Select the action that you want to perform on the specified LDAP user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
-          "tooltip": "Select the action that you want to perform on the specified LDAP user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "description": "Select the method using which you want to search for the specific LDAP user in the Fortinet FortiAuthenticator. You can search for the specific LDAP user and retrieve its details using one of the following options: ID, Username, or Email.",
+          "tooltip": "Select the method using which you want to search for the specific LDAP user in the Fortinet FortiAuthenticator. You can search for the specific LDAP user and retrieve its details using one of the following options: ID, Username, or Email.",
           "onchange": {
             "ID": [
               {
                 "title": "User ID",
                 "type": "text",
                 "name": "id",
-                "description": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-                "tooltip": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "description": "If you choose 'ID', then in the User ID field specify the ID of the LDAP user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "If you choose 'ID', then in the User ID field specify the ID of the LDAP user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
                 "visible": true
@@ -821,8 +821,8 @@
                 "title": "Username",
                 "type": "text",
                 "name": "username",
-                "description": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-                "tooltip": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "description": "If you choose 'Username', then in the Username field specify the username of the LDAP user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "If you choose 'Username', then in the Username field specify the username of the LDAP user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
                 "visible": true
@@ -833,8 +833,8 @@
                 "title": "Search by Email",
                 "type": "text",
                 "name": "email",
-                "description": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-                "tooltip": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "description": "If you choose 'Email', then in the Email field specify the email address of the LDAP user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "If you choose 'Email', then in the Email field specify the email address of the LDAP user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
                 "visible": true
@@ -847,7 +847,7 @@
     {
       "operation": "update_ldapuser_status",
       "title": "Update LDAP User Status",
-      "description": "Update an specific LDAP user status in Fortinet FortiAuthenticator based on the User ID and Active/Deactive you have specified.",
+      "description": "Updates the user status of a specific LDAP user in Fortinet FortiAuthenticator based on the user ID and status you have specified.",
       "enabled": true,
       "category": "investigation",
       "annotation": "update_ldapuser_status",
@@ -888,8 +888,8 @@
           "title": "User ID",
           "type": "text",
           "name": "userid",
-          "description": "ID of the user from which you want to update a LDAP user status in Fortinet FortiAuthenticator.",
-          "tooltip": "ID of the user from which you want to update a LDAP user status in Fortinet FortiAuthenticator.",
+          "description": "Specify the ID of the user from which you want to update the status of an LDAP user in Fortinet FortiAuthenticator.",
+          "tooltip": "Specify the ID of the user from which you want to update the status of an LDAP user in Fortinet FortiAuthenticator.",
           "required": true,
           "editable": true,
           "visible": true
@@ -898,8 +898,8 @@
           "title": "Activate/Deactivate",
           "type": "checkbox",
           "name": "active",
-          "description": "Used to activate/deactivate LDAP user status in Fortinet FortiAuthenticator. Default set as True.",
-          "tooltip": "Used to activate/deactivate LDAP user status in Fortinet FortiAuthenticator. Default set as True.",
+          "description": "Select this option (default is selected) to activate the account status of the LDAP user in Fortinet FortiAuthenticator. Clear this option to deactivate the account status of the LDAP user in Fortinet FortiAuthenticator.",
+          "tooltip": "Select this option (default is selected) to activate the account status of the LDAP user in Fortinet FortiAuthenticator. Clear this option to deactivate the account status of the LDAP user in Fortinet FortiAuthenticator.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -910,7 +910,7 @@
     {
       "operation": "get_radius_user_list",
       "title": "Get Radius User List",
-      "description": "Retrieves list of all radius user from Fortinet FortiAuthenticator.",
+      "description": "Retrieves a list of radius users from Fortinet FortiAuthenticator.",
       "enabled": true,
       "category": "investigation",
       "annotation": "get_radius_user_list",
@@ -944,32 +944,32 @@
       "parameters": [
         {
           "title": "Limit",
-          "description": "Maximum number of results, per page, that this operation should return. By default, this value is set as 20 or can be set up to a maximum of 1000.",
+          "description": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this value is set as 20 and the maximum is 1000.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "limit",
           "value": 20,
-          "tooltip": "Maximum number of results, per page, that this operation should return. By default, this value is set as 20 or can be set up to a maximum of 1000."
+          "tooltip": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this value is set as 20 and the maximum is 1000."
         },
         {
           "title": "Offset",
           "name": "offset",
-          "description": "Includes results at this offset within the full result set, where the first result is at position 0 (default).",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say users starting from the 10th user. By default, this is set as 0.",
           "value": 0,
           "type": "integer",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Includes results at this offset within the full result set, where the first result is at position 0 (default)."
+          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say users starting from the 10th user. By default, this is set as 0."
         }
       ]
     },
     {
       "operation": "get_radius_user",
       "title": "Get Specific Radius User",
-      "description": "Retrieves details of a specific radius user from Fortinet FortiAuthenticator based on the input parameters User ID, Username and Email you have specified.",
+      "description": "Retrieves details of a specific Radius user from Fortinet FortiAuthenticator based on the user ID, username, or email you have specified.",
       "enabled": true,
       "category": "investigation",
       "annotation": "get_radius_user",
@@ -1037,16 +1037,16 @@
             "Username",
             "Email"
           ],
-          "description": "Select the action that you want to perform on the specified LDAP user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
-          "tooltip": "Select the action that you want to perform on the specified LDAP user on the Fortinet FortiAuthenticator. You can choose from the following options: ID, Username, or Email.",
+          "description": "Select the method using which you want to search for the specific Radius user in the Fortinet FortiAuthenticator. You can search for the specific Radius user and retrieve its details using one of the following options: ID, Username, or Email.",
+          "tooltip": "Select the method using which you want to search for the specific Radius user in the Fortinet FortiAuthenticator. You can search for the specific Radius user and retrieve its details using one of the following options: ID, Username, or Email.",
           "onchange": {
             "ID": [
               {
                 "title": "User ID",
                 "type": "text",
                 "name": "id",
-                "description": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-                "tooltip": "ID of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "description": "If you choose 'ID', then in the User ID field specify the ID of the Radius user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "If you choose 'ID', then in the User ID field specify the ID of the Radius user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
                 "visible": true
@@ -1057,8 +1057,8 @@
                 "title": "Username",
                 "type": "text",
                 "name": "username",
-                "description": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-                "tooltip": "Name of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "description": "If you choose 'Username', then in the Username field specify the username of the Radius user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "If you choose 'Username', then in the Username field specify the username of the Radius user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
                 "visible": true
@@ -1069,8 +1069,8 @@
                 "title": "Search by Email",
                 "type": "text",
                 "name": "email",
-                "description": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
-                "tooltip": "Email address of the user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "description": "If you choose 'Email', then in the Email field specify the email address of the Radius user whose details you want to retrieve from Fortinet FortiAuthenticator.",
+                "tooltip": "If you choose 'Email', then in the Email field specify the email address of the Radius user whose details you want to retrieve from Fortinet FortiAuthenticator.",
                 "required": false,
                 "editable": true,
                 "visible": true
@@ -1083,7 +1083,7 @@
     {
       "operation": "update_radiususer_status",
       "title": "Update Radius User Status",
-      "description": "Update an specific radius user status in Fortinet FortiAuthenticator based on the User ID and Active/Deactive you have specified.",
+      "description": "Updates the user status of a specific Radius user in Fortinet FortiAuthenticator based on the user ID and status you have specified.",
       "enabled": true,
       "category": "investigation",
       "annotation": "update_radiususer_status",
@@ -1108,8 +1108,8 @@
           "title": "User ID",
           "type": "text",
           "name": "userid",
-          "description": "ID of the user from which you want to update a radius user status in Fortinet FortiAuthenticator.",
-          "tooltip": "ID of the user from which you want to update a radius user status in Fortinet FortiAuthenticator.",
+          "description": "Specify the ID of the user from which you want to update the status of a Radius user in Fortinet FortiAuthenticator.",
+          "tooltip": "Specify the ID of the user from which you want to update the status of a Radius user in Fortinet FortiAuthenticator.",
           "required": true,
           "editable": true,
           "visible": true
@@ -1118,8 +1118,8 @@
           "title": "Activate/Deactivate",
           "type": "checkbox",
           "name": "active",
-          "description": "Used to activate/deactivate radius user status in Fortinet FortiAuthenticator. Default set as True.",
-          "tooltip": "Used to activate/deactivate radius user status in Fortinet FortiAuthenticator. Default set as True.",
+          "description": "Select this option (default is selected) to activate the account status of the Radius user in Fortinet FortiAuthenticator. Clear this option to deactivate the account status of the Radius user in Fortinet FortiAuthenticator.",
+          "tooltip": "Select this option (default is selected) to activate the account status of the Radius user in Fortinet FortiAuthenticator. Clear this option to deactivate the account status of the Radius user in Fortinet FortiAuthenticator.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -1130,7 +1130,7 @@
     {
       "operation": "get_userlockout_policy",
       "title": "Get User Lockout Policy Info",
-      "description": "Retrieves an User Lockout Policy details from Fortinet FortiAuthenticator.",
+      "description": "Retrieves User Lockout Policy details from Fortinet FortiAuthenticator.",
       "enabled": true,
       "category": "investigation",
       "annotation": "get_userlockout_policy",
